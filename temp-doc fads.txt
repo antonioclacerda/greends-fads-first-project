@@ -1,0 +1,10 @@
+5.1) Can you explain the copy (cp ../temp-* .) command used above?
+Answer: The cp copies files from a source to a destination. ../ refers to the parent directory, one level up from the current one. temp-* is a wildcard pattern matching every file whose name starts with "temp-" (temp-data.csv, temp-average.py, temp-doc.txt). The final . means the current directory. So the command copies all "temp-" files from the parent directory into the current folder, greends-fads-first-project.
+
+5.2) Can you explain why, in this case, we did not have to do git init?
+Answer: Because the folder was created with git clone. Cloning downloads the entire repository, including the hidden .git directory with its full history. It also sets up the link to the online repository (the remote called origin). The folder is therefore already a Git repository, so git init is unnecessary.
+
+5.3) Can you commit the files copied? What do you need to do?
+Answer: Yes. The files are currently untracked, so they must first be staged with git add and then committed with git commit and a descriptive message:
+git add temp-data.csv temp-average.py temp-doc.txt (or git add .)
+git commit -m "Add temperature project files and answers"
